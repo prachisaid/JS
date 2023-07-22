@@ -96,14 +96,26 @@ submit.addEventListener('click', function(e){
     // console.log(data.get())
     
     if(validEmail && validName && validphone){
-        let success = document.getElementById('success')
-        console.log("Valid")
-        success.classList.add('show')
+        let success = document.getElementById('status')
+        let str = `<div id="success" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> Your travel request has been successfully submitted
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>`
+
+      success.innerHTML = str;
     }
     else{
-        let error = document.getElementById('error')
-        error.classList.add('show')
-        console.log("Not valid")
+        let error = document.getElementById('status')
+        let str = `<div id="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Failure!</strong> Your travel request not been submitted
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>`
+
+      error.innerHTML = str;
     }
 
 })
