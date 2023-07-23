@@ -95,6 +95,7 @@ submit.addEventListener('click', function(e){
     // let data = new FormData(document.getElementById('form'))
     // console.log(data.get())
     
+    
     if(validEmail && validName && validphone){
         let success = document.getElementById('status')
         let str = `<div id="success" class="alert alert-success alert-dismissible fade show" role="alert">
