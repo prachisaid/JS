@@ -1,0 +1,38 @@
+body{
+    /* background-color: rgb(189, 164, 164); */
+}
+
+.whiteBox{
+    border: 2px solid black;
+    margin: 12px;
+    display: inline-block;
+    height: 155px;
+    width: 155px;
+}
+
+.imgBox{
+    background-image: url('images.png');
+    position: relative;
+    top: 5px;
+    left : 5px;
+    height: 145px;
+    width: 145px;
+    cursor: pointer;
+}
+
+.hold{
+    border: 1.5px solid red;
+}
+
+.hide{
+    display: none;
+}
+
+.dashed{
+    border-style: dashed;
+    background-color: rgba(83, 81, 81, 0.379);
+}
+
+.show{
+    display: block;
+}

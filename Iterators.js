@@ -26,7 +26,7 @@ const myArray = ['Apples', 'Grapes', 'Oranges', 'Bhindi']
 console.log("My array is ", myArray)
 // console.log(fruitsIterator(myArray).next())
 const fruits = fruitsIterator(myArray)
-console.log(fruits.next().value)
+console.log(fruits)
 console.log(fruits.next().value)
 console.log(fruits.next().value)
 console.log(fruits.next().value)
