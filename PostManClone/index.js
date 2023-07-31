@@ -61,7 +61,7 @@ let addParam = document.getElementById('addParam').addEventListener('click', fun
 // If user clicks on submit button
 let submit = document.getElementById('submit').addEventListener('click', function(){
     // Show please wait in the response box to request patience from user
-    document.getElementById('responseJsonText').value = "Please wait fetching your response..."
+    document.getElementById('responsePrism').innerHTML = "Please wait fetching your response..."
 
     let url = document.getElementById('urlField').value;
     let requestType = document.querySelector("input[name='requestType']:checked").value
@@ -91,12 +91,30 @@ let submit = document.getElementById('submit').addEventListener('click', functio
 
     // if the request type is get invoke fetch api to create get request
     if(requestType == 'GET'){
-        fetch(url, {
+        fetch(url,{
             method : 'GET',
         }).then((response) =>{
-            return response.json();
+            return response.text();
         }).then((data) => {
-            document.getElementById('responseJsonText').value = data
-        })
+            document.getElementById('responsePrism').innerHTML = data
+            Prism.highlightAll();   
+        });
+    }
+
+    else{
+        fetch(url,{
+            method : 'POST',
+            body : data,
+            headers : {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+
+        }).then((response) =>{
+            return response.text();
+        }).then((data) => {
+            document.getElementById('responsePrism').innerHTML = data
+            Prism.highlightAll();
+        });
     }
 })
+

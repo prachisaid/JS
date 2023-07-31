@@ -7,8 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="prism.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    
+    <style>
+        #responsePrism{
+            float:left;
+            overflow-y: auto;
+            max-height: 200px;
+        }
+    </style>
 
     <title>Post Man!</title>
 </head>
@@ -99,11 +109,9 @@
                 </div>
                 <button id="addParam" class="btn btn-secondary">+</button>
             </div>
+            <div id="params"></div>
         </div>
 
-        <div id="params">
-
-        </div>
 
         <!-- JSON Request Box : This will hide on clicking parameters option -->
         <div id="requestJsonBox" class="my-4">
@@ -126,8 +134,14 @@
             <div class="form-group row">
                 <label for="urlField" class="col-sm-2 col-form-label">Response</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="responseJsonText"
-                        rows="3">Your response will apper here</textarea>
+                    <!-- <textarea class="form-control" id="responseJsonText"
+                        rows="3">Your response will apper here</textarea> -->
+
+                    <pre id="responsePre" class="language-javascript">
+                        <code class="language-javascript" id="responsePrism">
+                            Your response will appear here
+                        </code>
+                    </pre>
                 </div>
             </div>
         </div>
@@ -140,6 +154,7 @@
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
     <script src="index.js"></script>
+    <script src="prism.js"></script>
 </body>
 
 </html>
